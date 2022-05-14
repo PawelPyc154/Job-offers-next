@@ -1,0 +1,4 @@
+.scrollbarBorder::-webkit-scrollbar-thumb {
+  border-top: solid 32px rgb(229, 231, 235);
+}
+

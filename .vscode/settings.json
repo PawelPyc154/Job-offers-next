@@ -1,0 +1,22 @@
+{
+  "files.exclude": {
+    "tsconfig.json": false,
+    "README.md": false,
+    "postcss.config.js": false,
+    "pnpm-lock.yaml": false,
+    "package.json": false,
+    "next.config.js": false,
+    "next-env.d.ts": false,
+    "lint-staged.config.js": false,
+    ".prettierrc": false,
+    ".gitignore": false,
+    ".eslintrc.js": false,
+    "public": false,
+    "node_modules": false,
+    ".vscode": false,
+    ".next": false,
+    ".husky": false,
+    "tsconfig.tsbuildinfo": false
+  },
+  "workspace.isHidden": false
+}
