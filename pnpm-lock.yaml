@@ -1,7 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@next-auth/prisma-adapter': ^1.0.3
   '@next/eslint-plugin-next': ^12.1.6
+  '@prisma/client': ^3.14.0
   '@reach/dialog': ^0.17.0
   '@tanstack/react-table': 8.0.0-alpha.67
   '@tippyjs/react': ^4.2.6
@@ -39,6 +41,8 @@ specifiers:
   typescript: 4.6.4
 
 dependencies:
+  '@next-auth/prisma-adapter': 1.0.3_ensgqe3sz6ibfvnwkrl3cb6rue
+  '@prisma/client': 3.14.0
   '@reach/dialog': 0.17.0_i6xcbgvvylvakhe2evaee3dlf4
   '@tanstack/react-table': 8.0.0-alpha.67_ef5jwxihqo6n7gxfmzogljlgcm
   '@tippyjs/react': 4.2.6_ef5jwxihqo6n7gxfmzogljlgcm
@@ -125,6 +129,16 @@ packages:
   /@humanwhocodes/object-schema/1.2.1:
     resolution: {integrity: sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==}
     dev: true
+
+  /@next-auth/prisma-adapter/1.0.3_ensgqe3sz6ibfvnwkrl3cb6rue:
+    resolution: {integrity: sha512-3Lq1cD3ytKM3EGKJZ4UZvlqshLtlPvYxLeCrUV9ifYwYlq51kmDaHjsIawlp8EbH5pE1UhlsvtlXMery7RghtA==}
+    peerDependencies:
+      '@prisma/client': '>=2.26.0 || >=3'
+      next-auth: ^4.0.1
+    dependencies:
+      '@prisma/client': 3.14.0
+      next-auth: 4.3.4_ef5jwxihqo6n7gxfmzogljlgcm
+    dev: false
 
   /@next/env/12.1.6:
     resolution: {integrity: sha512-Te/OBDXFSodPU6jlXYPAXpmZr/AkG6DCATAxttQxqOWaq6eDFX25Db3dK0120GZrSZmv4QCe9KsZmJKDbWs4OA==}
@@ -268,6 +282,23 @@ packages:
 
   /@popperjs/core/2.11.5:
     resolution: {integrity: sha512-9X2obfABZuDVLCgPK9aX0a/x4jaOEweTTWE2+9sr0Qqqevj2Uv5XorvusThmc9XGYpS9yI+fhh8RTafBtGposw==}
+    dev: false
+
+  /@prisma/client/3.14.0:
+    resolution: {integrity: sha512-atb41UpgTR1MCst0VIbiHTMw8lmXnwUvE1KyUCAkq08+wJyjRE78Due+nSf+7uwqQn+fBFYVmoojtinhlLOSaA==}
+    engines: {node: '>=12.6'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 3.14.0-36.2b0c12756921c891fec4f68d9444e18c7d5d4a6a
+    dev: false
+
+  /@prisma/engines-version/3.14.0-36.2b0c12756921c891fec4f68d9444e18c7d5d4a6a:
+    resolution: {integrity: sha512-D+yHzq4a2r2Rrd0ZOW/mTZbgDIkUkD8ofKgusEI1xPiZz60Daks+UM7Me2ty5FzH3p/TgyhBpRrfIHx+ha20RQ==}
     dev: false
 
   /@reach/dialog/0.17.0_i6xcbgvvylvakhe2evaee3dlf4:
