@@ -1,4 +1,3 @@
-import { JobOfferPage } from 'components/pages/jobOffersPage'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -10,7 +9,7 @@ const JobOfferRoute: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <JobOfferPage />
+    <div>jobOfferPage</div>
   </div>
 )
 

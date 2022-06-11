@@ -1,6 +1,5 @@
-import { CandidateMyProfilePage } from 'components/pages/candidateMyProfilePage/candidateMyProfilePage'
 import type { NextPage } from 'next'
 
-const MyProfileRoute: NextPage = () => <CandidateMyProfilePage />
+const MyProfileRoute: NextPage = () => <div>candidateMyProfilePage</div>
 
 export default MyProfileRoute

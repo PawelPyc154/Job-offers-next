@@ -1,43 +1,36 @@
+import { MongoDBAdapter } from '@next-auth/mongodb-adapter'
 import NextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
-import { PrismaAdapter } from '@next-auth/prisma-adapter'
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import clientPromise from 'lib/mongodb'
 
 export default NextAuth({
-  // Configure one or more authentication providers
-  adapter: PrismaAdapter(prisma),
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
+
+      authorization: {
+        url: 'https://github.com/login/oauth/authorize?scope=read:user+user:email',
+        params: { test: 'test' },
+      },
     }),
-    // ...add more providers here
   ],
   secret: process.env.SECRET,
-  // callbacks: {
-  //   async jwt({ token, account, user, profile, isNewUser }) {
-  //     // console.log('jwt', { token, account, user, profile, isNewUser })
-  //     // Persist the OAuth access_token to the token right after signin
-  //     //   if (account) {
-  //     //     token.accessToken = account.access_token
-  //     //   }
-  //     return token
-  //   },
-  //   async session({ session, token, user }) {
-  //     // Send properties to the client, like an access_token from a provider.
-  //     //   session.accessToken = token.accessToken
 
-  //     // console.log('session', { session, token, user })
-  //     return session
-  //   },
-  //   async signIn({ account, email, profile, user, credentials }) {
-  //     // Send properties to the client, like an access_token from a provider.
-  //     //   session.accessToken = token.accessToken
+  callbacks: {
+    async session({ session, user }) {
+      return { ...session, user }
+    },
 
-  //     console.log('signIn', { account, email, profile, user, credentials })
-  //     return true
-  //   },
-  // },
+    async signIn({ account, email, profile, user, credentials }) {
+      console.log(account, email, profile, user, credentials)
+
+      // eslint-disable-next-line no-param-reassign
+      user.createdAt = new Date()
+      // eslint-disable-next-line no-param-reassign
+      user.role = 'test'
+      return true
+    },
+  },
 })

@@ -1,9 +1,11 @@
-import { getToken } from 'next-auth/jwt'
+// import { getToken } from 'next-auth/jwt'
+// import { getSession } from 'next-auth/react'
 
 import { NextRequest, NextResponse } from 'next/server'
+import { getSessionMiddleware } from 'utils/getSessionMiddleware'
 
 export const middleware = async (req: NextRequest) => {
-  const session = await getToken({ req, secret: process.env.SECRET })
+  const session = await getSessionMiddleware(req)
 
   if (!session) return NextResponse.next()
 

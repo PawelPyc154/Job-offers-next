@@ -1,11 +1,12 @@
-import { getToken } from 'next-auth/jwt'
-
 import { NextRequest, NextResponse } from 'next/server'
+import { getSessionMiddleware } from 'utils/getSessionMiddleware'
 
 export const middleware = async (req: NextRequest) => {
-  const session = await getToken({ req, secret: process.env.SECRET })
+  const session = await getSessionMiddleware(req)
 
-  if (session) return NextResponse.next()
+  if (session) {
+    return NextResponse.next()
+  }
 
   const url = req.nextUrl.clone()
   url.pathname = '/sign-in'

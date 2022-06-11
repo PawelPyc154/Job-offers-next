@@ -1,6 +1,5 @@
-import { AddEditJobOfferPage } from 'components/pages/addEditJobOfferPage/addEditJobOfferPage'
 import type { NextPage } from 'next'
 
-const EditJobOfferRoute: NextPage = () => <AddEditJobOfferPage />
+const EditJobOfferRoute: NextPage = () => <div>addEditJobOfferPage</div>
 
 export default EditJobOfferRoute

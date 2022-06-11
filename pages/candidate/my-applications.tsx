@@ -1,6 +1,5 @@
-import { CandidateMyApplicationsPage } from 'components/pages/candidateMyApplicationsPage/candidateMyApplicationsPage'
 import type { NextPage } from 'next'
 
-const MyAplicationsRoute: NextPage = () => <CandidateMyApplicationsPage />
+const MyAplicationsRoute: NextPage = () => <div>candidateMyApplicationsPage</div>
 
 export default MyAplicationsRoute
